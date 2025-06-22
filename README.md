@@ -1,4 +1,4 @@
-```markdown
+
 # 📦 DevOps & DevSecOps Explained
 
 ---
@@ -29,10 +29,9 @@ DevOps is often visualized as an infinite loop for continuous feedback, integrat
 CODE → BUILD → TEST → RELEASE → DEPLOY → OPERATE → MONITOR
    ↑                                                      ⬇
  ---------------------------<--------------------------- 
-
-````
-## Stages:
 ```
+
+## Stages:
 - **Plan:** Requirements, backlogs.
 - **Code:** Application code, config.
 - **Build:** Compile, package.
@@ -41,14 +40,14 @@ CODE → BUILD → TEST → RELEASE → DEPLOY → OPERATE → MONITOR
 - **Deploy:** Move code to production.
 - **Operate:** Monitor in production.
 - **Monitor:** Track performance, feedback to planning.
-```
+ 
 
 - <img src="https://github.com/user-attachments/assets/8b177716-0d6b-4f23-890c-caa451bf0ac8" alt="image" width="500"/>
 
 
 
 
-```
+
 
 ## DevOps Methodology:
 
@@ -66,8 +65,7 @@ This methodology comprises four key principles that guide the effectiveness and 
 **4.Hyperfocus on user needs with short feedback loops.** Through automation, improved communication and collaboration, and continuous improvement, DevOps teams can take a moment and focus on what real users really want, and how to give it to them.
 
 ---
-```
-```
+
 
 ## What is DevSecOps?
 
@@ -108,7 +106,7 @@ CODE → BUILD → TEST → RELEASE → DEPLOY → OPERATE → MONITOR
    |           |        |         |         |      |
 SECURITY at EVERY STEP (e.g., code scans, build audits, runtime monitoring, automated patching)
 
-
+```
 **Security practices integrated into:**
 - Code review (static analysis, secrets scan)
 - Build (dependency checks, image scanning)
