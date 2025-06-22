@@ -41,7 +41,10 @@ CODE → BUILD → TEST → RELEASE → DEPLOY → OPERATE → MONITOR
 - **Operate:** Monitor in production.
 - **Monitor:** Track performance, feedback to planning.
 
-- ![image](https://github.com/user-attachments/assets/a25f483f-b125-4a86-9d8a-4251873a4b96)
+
+- <p align="center">
+  <img src="(https://github.com/user-attachments/assets/a25f483f-b125-4a86-9d8a-4251873a4b96)" alt="DevOps Lifecycle" width="400"/>
+</p>
 
 
 ---
@@ -121,5 +124,4 @@ SECURITY at EVERY STEP (e.g., code scans, build audits, runtime monitoring, auto
 | Security          | Post-process | Integrated/continuous      |
 | Main Goal         | Delivery     | Delivery + Security        |
 ```
-This concise write-up will help clarify DevOps and DevSecOps in interviews, documents, and project discussions!
-```
+
