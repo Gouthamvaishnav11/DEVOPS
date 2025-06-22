@@ -1,4 +1,4 @@
-```markdown
+
 # Linux & Internet Essentials — Complete README
 
 This guide covers how the internet works, types of servers, differences between application and web servers, Linux basics, system management, and **clear, common commands for practical use**.
