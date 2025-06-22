@@ -42,9 +42,9 @@ CODE → BUILD → TEST → RELEASE → DEPLOY → OPERATE → MONITOR
 - **Monitor:** Track performance, feedback to planning.
 
 
-- <p align="center">
-  <img src="https://www.google.com/imgres?q=devops%20lifecycle&imgurl=https%3A%2F%2Fwww.edureka.co%2Fblog%2Fwp-content%2Fuploads%2F2019%2F06%2FDevOps-Tools-DevOps-Tutorial-Edureka-1.webp&imgrefurl=https%3A%2F%2Fwww.edureka.co%2Fblog%2Fdevops-lifecycle%2F&docid=LE_0rUpciSAanM&tbnid=cTUDHPr-fJ71SM&vet=12ahUKEwjS1Zq8xoWOAxVJyTgGHe2dJKIQM3oECGYQAA..i&w=694&h=417&hcb=2&ved=2ahUKEwjS1Zq8xoWOAxVJyTgGHe2dJKIQM3oECGYQAA" alt="DevOps Lifecycle" width="400"/>
-</p>
+- <img src="https://github.com/user-attachments/assets/ae6230b5-8543-4f6c-825e-acee031bb444" alt="image" width="400"/>
+
+
 
 
 ---
