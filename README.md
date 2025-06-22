@@ -42,8 +42,7 @@ CODE → BUILD → TEST → RELEASE → DEPLOY → OPERATE → MONITOR
 - **Monitor:** Track performance, feedback to planning.
 
 
-- <img src="https://github.com/user-attachments/assets/8b177716-0d6b-4f23-890c-caa451bf0ac8
-" alt="image" width="500"/>
+- <img src="https://github.com/user-attachments/assets/8b177716-0d6b-4f23-890c-caa451bf0ac8" alt="image" width="500"/>
 
 
 
