@@ -42,7 +42,8 @@ CODE → BUILD → TEST → RELEASE → DEPLOY → OPERATE → MONITOR
 - **Monitor:** Track performance, feedback to planning.
 
 
-- <img src="https://github.com/user-attachments/assets/ae6230b5-8543-4f6c-825e-acee031bb444" alt="image" width="400"/>
+- <img src="https://github.com/user-attachments/assets/8b177716-0d6b-4f23-890c-caa451bf0ac8
+" alt="image" width="500"/>
 
 
 
@@ -109,7 +110,9 @@ SECURITY at EVERY STEP (e.g., code scans, build audits, runtime monitoring, auto
 - Deploy (infrastructure as code controls)
 - Monitor (threat detection, log analysis)
 
-- ![image](https://github.com/user-attachments/assets/324e4e37-55ab-4d9b-b545-85b4a05813ce)
+- 
+-  <img src="https://github.com/user-attachments/assets/324e4e37-55ab-4d9b-b545-85b4a05813ce" alt="image" width="500"/>
+
 
 
 ---
