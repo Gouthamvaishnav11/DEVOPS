@@ -30,8 +30,9 @@ CODE → BUILD → TEST → RELEASE → DEPLOY → OPERATE → MONITOR
    ↑                                                      ⬇
  ---------------------------<--------------------------- 
 
-
-**Stages:**
+````
+## Stages:
+```
 - **Plan:** Requirements, backlogs.
 - **Code:** Application code, config.
 - **Build:** Compile, package.
@@ -40,16 +41,17 @@ CODE → BUILD → TEST → RELEASE → DEPLOY → OPERATE → MONITOR
 - **Deploy:** Move code to production.
 - **Operate:** Monitor in production.
 - **Monitor:** Track performance, feedback to planning.
-
+```
 
 - <img src="https://github.com/user-attachments/assets/8b177716-0d6b-4f23-890c-caa451bf0ac8" alt="image" width="500"/>
 
 
 
 
----
+```
 
 ## DevOps Methodology:
+
 The DevOps methodology aims to shorten the systems development lifecycle and provide continuous delivery with high software quality. It emphasizes collaboration, automation, integration and rapid feedback cycles. These characteristics help ensure a culture of building, testing, and releasing software that is more reliable and at a high velocity.
 
 This methodology comprises four key principles that guide the effectiveness and efficiency of application development and deployment. These principles, listed below, center on the best aspects of modern software development.
@@ -64,6 +66,8 @@ This methodology comprises four key principles that guide the effectiveness and 
 **4.Hyperfocus on user needs with short feedback loops.** Through automation, improved communication and collaboration, and continuous improvement, DevOps teams can take a moment and focus on what real users really want, and how to give it to them.
 
 ---
+```
+```
 
 ## What is DevSecOps?
 
@@ -129,5 +133,5 @@ SECURITY at EVERY STEP (e.g., code scans, build audits, runtime monitoring, auto
 | Security          | Post-process | Integrated/continuous      |
 | Main Goal         | Delivery     | Delivery + Security        |
 
-
 ```
+
