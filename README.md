@@ -131,5 +131,5 @@ SECURITY at EVERY STEP (e.g., code scans, build audits, runtime monitoring, auto
 | Security          | Post-process | Integrated/continuous      |
 | Main Goal         | Delivery     | Delivery + Security        |
 
-```
+
 
