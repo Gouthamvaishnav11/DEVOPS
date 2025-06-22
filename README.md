@@ -125,5 +125,5 @@ SECURITY at EVERY STEP (e.g., code scans, build audits, runtime monitoring, auto
 | Continuous Flow   | Yes          | Yes                        |
 | Security          | Post-process | Integrated/continuous      |
 | Main Goal         | Delivery     | Delivery + Security        |
-```
+
 
