@@ -29,7 +29,7 @@ DevOps is often visualized as an infinite loop for continuous feedback, integrat
 CODE → BUILD → TEST → RELEASE → DEPLOY → OPERATE → MONITOR
    ↑                                                      ⬇
  ---------------------------<--------------------------- 
-```
+
 
 **Stages:**
 - **Plan:** Requirements, backlogs.
@@ -56,8 +56,11 @@ This methodology comprises four key principles that guide the effectiveness and 
 
 ## Core DevOps principles :
 **1.Automation of the software development lifecycle.** This includes automating testing, builds, releases, the provisioning of development environments, and other manual tasks that can slow down or introduce human error into the software delivery process.
+
 **2.Collaboration and communication.** A good DevOps team has automation, but a great DevOps team also has effective collaboration and communication.
+
 **3.Continuous improvement and minimization of waste.** From automating repetitive tasks to watching performance metrics for ways to reduce release times or mean-time-to-recovery, high performing DevOps teams are regularly looking for areas that could be improved.
+
 **4.Hyperfocus on user needs with short feedback loops.** Through automation, improved communication and collaboration, and continuous improvement, DevOps teams can take a moment and focus on what real users really want, and how to give it to them.
 
 ---
@@ -100,7 +103,7 @@ CODE → BUILD → TEST → RELEASE → DEPLOY → OPERATE → MONITOR
    ↑           ↑        ↑         ↑         ↑      ↑
    |           |        |         |         |      |
 SECURITY at EVERY STEP (e.g., code scans, build audits, runtime monitoring, automated patching)
-```
+
 
 **Security practices integrated into:**
 - Code review (static analysis, secrets scan)
@@ -127,3 +130,4 @@ SECURITY at EVERY STEP (e.g., code scans, build audits, runtime monitoring, auto
 | Main Goal         | Delivery     | Delivery + Security        |
 
 
+```
