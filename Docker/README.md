@@ -1,10 +1,10 @@
 ## Docker: An Overview
 
-## What is Docker?
+# What is Docker?
 
 Docker is an open-source platform that uses OS-level virtualization to deliver software in packages called containers. Containers are lightweight, portable, and self-sufficient units that package an application's code, libraries, dependencies, and configuration files together. Think of it as "build once, run anywhere" – ensuring consistency across development, testing, and production environments. It's a key technology in modern DevOps practices, enabling Continuous Integration/Continuous Deployment (CI/CD) pipelines.
----
-## Why Use Docker? (Advantages)
+
+# Why Use Docker? (Advantages)
 
   - Consistency: Eliminates the "it works on my machine" problem by ensuring the application runs the same way everywhere.
   - Isolation: Containers isolate applications from each other and from the underlying infrastructure, preventing conflicts between dependencies.
@@ -16,7 +16,7 @@ Docker is an open-source platform that uses OS-level virtualization to deliver s
   - Version Control & Rollback: Docker images can be versioned, and containers can be easily rolled back to previous stable states.
   - Improved Security: While sharing the kernel, containers provide process and network isolation, enhancing security compared to running applications directly on the host.
 ---
-## Limitations (Disadvantages)
+# Limitations (Disadvantages)
 
 - Security Risks: Sharing the host OS kernel can be a potential vulnerability if a container is compromised. Requires careful security practices (e.g., minimal base images, least privilege).
 - Complexity: Can add complexity to the overall architecture and operational processes, especially for teams new to containerization.
@@ -27,15 +27,16 @@ Docker is an open-source platform that uses OS-level virtualization to deliver s
 
 ## Architecture of Docker:
 
-- <img src="https://github.com/user-attachments/assets/a4d5f8de-e06b-4b35-94ad-7ad9812d7137" alt="image" width="500"/>
+- <img src="https://github.com/user-attachments/assets/a4d5f8de-e06b-4b35-94ad-7ad9812d7137" alt="image" width="300"/>
 
-# Components of Docker:
-## Docker Daemon:
+
+## Components of Docker:
+# Docker Daemon:
 -Docker daemon runs on the Host O.S.
 -It is responsible for running containers, and managing docker services.
 -Docker daemons can communicate with other daemons.
 
-## Docker Client: 
+# Docker Client: 
 -Docker users can interact with the docker daemon through a client.
 -Docker client uses commands and Rest API to communicate with the docker
 daemon.
@@ -43,19 +44,19 @@ daemon.
 client terminal sends the docker commands to the docker daemon.
 -Docker clients can communicate with more than one daemon.
 
-## Docker Host
+# Docker Host
 Docker Host is used to providing an environment to execute and run
 applications. It contains the docker daemon, images, containers, networks,
 and storage.
 
-## Docker Hub/Registry:
+# Docker Hub/Registry:
 Docker registry manages and stores the docker images.
 There are two types of registries in the docker.
 
 1) Public Registry → Public registry also called Docker Hub.
 2) Private Registry → It is used to share images within the enterprise
 
-## Docker images:
+# Docker images:
 Docker images are the read-only binary templates used to create docker
 containers. or, a single file with all dependencies and configurations
 required to run a program.
@@ -64,7 +65,7 @@ required to run a program.
    2.Create an image from Docker File.
    3.Create an image from existing docker containers.
 
- ## Docker Container :
+ # Docker Container :
  -The container holds the entire package that is needed to run the application.
 or,
 -In other words, we can say that the image is a template and the container is
@@ -72,7 +73,7 @@ a copy of that template.
 -container is like virtualization when they run on the Docker engine.
 -Images become containers when they run on the docker engine.
 
-## Dockerfile Creation:
+# Dockerfile Creation:
 Docker image creation using existing docker file
 
 -We have to create a container from our image, therefore create one
@@ -104,7 +105,8 @@ docker images
   docker run -it --name<container_name> <update_img_name> /bin/bash--> ls--> cd tmp/--> lso/p -->myfile[you will get all files back]
   ```
  --- 
-## Dockerfile Creation using Dockerfile
+# Dockerfile Creation using Dockerfile
+
 # Dockerfile
 -Dockerfile is a text file it contains some set of instruction.
 -Automation of docker image creation.
@@ -140,7 +142,8 @@ executed by ENTRYPOINT only.
 - To define the name of a parameter and its default value, the difference
 between ENV and ARG is that after you set on env. using ARG, you will not
 be able to access that late on when you try to run the Docker container.
----
+
+
 ## Creation of Dockerfile
 - Create a file named Dockerfile
 - Add instructions in Dockerfile
@@ -200,7 +203,7 @@ docker run -it --name <container_name> <image_name> /bin/bash
 
 ---
 
-## 4. Run Image to Create the Container
+# 4. Run Image to Create the Container
 
 ```bash
 [root@ip...]# vi Dockerfile
@@ -211,7 +214,7 @@ RUN echo "Creating our Image" > /tmp/testfile
 
 ---
 
-## To Create an Image out of Dockerfile
+# To Create an Image out of Dockerfile
 
 ```bash
 docker build -t <image_name> .
@@ -222,7 +225,7 @@ docker build -t <image_name> .
 
 ---
 
-## Check Process State
+# Check Process State
 
 ```bash
 docker ps -a
@@ -242,7 +245,7 @@ docker images
 
 ---
 
-## To Create a Container from the Above Image
+# To Create a Container from the Above Image
 
 ```bash
 docker run -it --name <container_name> <image_name> /bin/bash
@@ -302,7 +305,7 @@ volume.
 
 ---
 
-# ➊ Create a Dockerfile and Write
+#  Create a Dockerfile and Write
 
 ```dockerfile
 FROM ubuntu
@@ -312,7 +315,7 @@ VOLUME ["/myvolume1"]
 
 ---
 
-# ➋ Build an Image from the Dockerfile
+#  Build an Image from the Dockerfile
 
 ```bash
 docker build -t <image_name> .
@@ -322,7 +325,7 @@ docker build -t <image_name> .
 
 ---
 
-# ➌ Create a Container from the Image and Run
+# Create a Container from the Image and Run
 
 ```bash
 docker run -it --name <container_name> <image_name> /bin/bash
@@ -333,7 +336,7 @@ docker run -it --name <container_name> <image_name> /bin/bash
 
 ---
 
-# ➍ Check the Volume
+#  Check the Volume
 
 Inside the running container, run:
 
@@ -345,7 +348,7 @@ ls
 
 ---
 
-#  ➎ Share Volume with Another Container (Container ↔ Container)
+#   Share Volume with Another Container (Container ↔ Container)
 
 To run a **second container** that shares the volume from the first container:
 
@@ -516,7 +519,72 @@ container, be it a shell or some other process.
         anywhere, even outside docker.
 
 
+# Docker vs. Virtual Machines (VMs) & Docker Networking
 
+## Docker vs. Virtual Machines (VMs)
+
+While both Docker containers and traditional Virtual Machines (VMs) provide a way to isolate applications, they do so in fundamentally different ways, leading to significant differences in resource usage, performance, and management.
+
+| Feature           | Docker Container                                    | Virtual Machine (VM)                                      |
+| :---------------- | :-------------------------------------------------- | :-------------------------------------------------------- |
+| **Isolation**     | OS-level isolation. Shares the host OS kernel.      | Hardware-level isolation. Each VM includes a full guest OS. |
+| **Size**          | Very small (MBs). Contains only app code, libs, config. | Much larger (GBs). Includes guest OS, hypervisor, apps.   |
+| **Startup Time**  | Very fast (milliseconds/seconds).                   | Slower (seconds/minutes).                                 |
+| **Resource Usage**| Highly efficient. Shares host kernel, uses less RAM/CPU. | Less efficient. Each VM needs its own OS and resources.    |
+| **Portability**   | Highly portable across different environments.      | Portable, but image size is larger.                       |
+| **Operating System**| Runs on a single, shared host OS kernel.           | Requires a full guest OS for each VM.                    |
+| **Hypervisor**    | Not required (uses OS-level features).             | Requires a hypervisor (Type 1 like VMware ESXi, Type 2 like VirtualBox). |
+| **Use Case**      | Ideal for microservices, application packaging, CI/CD. | Ideal for running entirely different OSes, full system isolation. |
+
+**In simple terms:** Think of VMs as fully equipped apartments (each with its own kitchen, plumbing, etc.), while Docker containers are like rooms within a shared house that use the house's central utilities (the host OS kernel).
+
+## Docker Networking
+
+Docker provides robust networking capabilities to allow containers to communicate with each other, with the outside world, and with the host machine. It abstracts away the underlying network configuration details.
+
+### Key Concepts:
+
+1.  **Docker Network Driver:** The mechanism used to create and manage networks. Docker provides several built-in drivers:
+    *   **Bridge:** The default network driver. Containers on the same bridge network can communicate, but not with containers on other bridge networks (unless explicitly linked or using user-defined bridges). User-defined bridges (created using `docker network create`) offer better isolation and features than the default bridge.
+    *   **Host:** Container shares the network stack of the host machine. No network isolation. Useful for performance-sensitive applications where network overhead is critical.
+    *   **None:** Container has no network interface configured. Network access is disabled.
+    *   **Overlay:** Used to connect containers across multiple Docker daemon nodes (e.g., in a Swarm cluster). Requires a shared key-value store (like etcd, Consul) and often encryption.
+    *   **MACVLAN:** Allows containers to have their own MAC address and appear as physical devices on the host network, using the host's IP address range.
+
+2.  **User-Defined Bridge Networks:** Recommended over the default bridge. They provide:
+    *   **Automatic DNS resolution:** Containers can resolve each other by name.
+    *   **Improved isolation:** Better separation between different bridge networks.
+    *   **Port sharing isolation:** Ports can be shared across containers on the *same* user-defined bridge network without conflict (e.g., multiple containers on port 80).
+
+3.  **Docker Network Commands:**
+
+```bash
+# List all networks
+docker network ls
+
+# Show detailed information about a specific network
+docker network inspect <network_name_or_id>
+
+# Create a new network (default is 'bridge' driver)
+docker network create [OPTIONS] <network_name>
+
+# Example: Create a user-defined bridge network
+docker network create --driver bridge my_custom_bridge
+
+# Example: Create an overlay network (for Swarm)
+# docker network create --driver overlay my_overlay_network
+
+# Connect a running container to a network
+docker network connect <network_name_or_id> <container_name_or_id>
+
+# Disconnect a container from a network
+docker network disconnect <network_name_or_id> <container_name_or_id>
+
+# Remove one or more networks
+docker network rm <network_name_or_id> [<network_name_or_id> ...]
+
+# Remove all networks not used by at least one container
+docker network prune
 
 
 
