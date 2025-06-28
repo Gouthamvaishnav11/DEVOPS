@@ -512,10 +512,10 @@ container, be it a shell or some other process.
 # Explain
   - If we specify neither expose nor -p the service in the container will only
       be accessible from inside the container itself.
-   -If we expose a port, the service in the container is not accessible from
+-If we expose a port, the service in the container is not accessible from
         outside docker, but from inside other docker containers, so this is good
             for inter-container communication.
-    - If we expose and -p a port, the service in the container is accessible from
+- If we expose and -p a port, the service in the container is accessible from
         anywhere, even outside docker.
 
 
