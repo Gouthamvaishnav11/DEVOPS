@@ -65,14 +65,165 @@ required to run a program.
    2.Create an image from Docker File.
    3.Create an image from existing docker containers.
 
- # Docker Container :
+## Docker Image Commands
+
+Images are read-only templates used to create containers. They contain the application code, libraries, tools, settings, and runtime needed to run the application.
+
+```bash
+# 1. List all Docker images locally
+docker images
+# or
+docker image ls
+
+# 2. Pull an image from a registry (default is Docker Hub)
+docker pull <image_name>[:<tag>]
+# Example: Pull the latest Ubuntu image
+docker pull ubuntu
+# Example: Pull a specific tagged Nginx image
+docker pull nginx:1.25-alpine
+
+# 3. Build an image from a Dockerfile in the current directory
+docker build -t <image_name>[:<tag>] [OPTIONS] .
+# Example: Build an image named 'my-web-app' with tag 'v1'
+docker build -t my-web-app:v1 .
+# Example: Build using a specific Dockerfile name
+docker build -f Dockerfile.dev -t my-app:dev .
+
+# 4. Tag an existing image (create an alias)
+docker tag <source_image_name>[:<tag>] <target_image_name>[:<tag>]
+# Example: Tag 'my-web-app:v1' to also be 'latest'
+docker tag my-web-app:v1 my-web-app:latest
+
+# 5. Push an image to a registry
+docker push <image_name>[:<tag>]
+# Example: Push 'my-web-app:latest' to Docker Hub (requires login)
+docker push my-web-app:latest
+
+# 6. Show detailed information about an image
+docker inspect <image_name>[:<tag>] | <image_id>
+# Example: Inspect the 'nginx' image
+docker inspect nginx
+
+# 7. Remove one or more images
+docker rmi <image_name>[:<tag>] | <image_id> [more_images...]
+# Example: Remove the 'my-web-app:v1' image
+docker rmi my-web-app:v1
+# Example: Remove an image by ID
+docker rmi a1b2c3d4e5f6
+
+# 8. Remove unused images ( dangling <none> images by default )
+docker image prune [OPTIONS]
+# Example: Remove all unused images (both dangling and unreferenced)
+docker image prune -a
+
+# 9. History of an image (view layers and creation details)
+docker history <image_name>[:<tag>] | <image_id>
+# Example: See the history of the 'ubuntu' image
+docker history ubuntu
+```
+# Docker Container :
  -The container holds the entire package that is needed to run the application.
 or,
 -In other words, we can say that the image is a template and the container is
 a copy of that template.
 -container is like virtualization when they run on the Docker engine.
 -Images become containers when they run on the docker engine.
+```
+# 1. List all containers (running and stopped)
+docker ps -a
+# or
+docker container ls -a
+# Example: List only running containers
+docker ps
 
+# 2. Run a new container
+docker run [OPTIONS] <image_name>[:<tag>] <command>
+# Common OPTIONS:
+#   -it              : Run in interactive mode with pseudo-TTY
+#   --name <name>    : Assign a name to the container
+#   -d               : Run container in detached mode (background)
+#   -p <host_port>:<container_port> : Publish a container's port(s) to the host
+#   -P               : Publish all exposed ports to random ports on the host
+#   -v <host_path>:<container_path>[:<options>] : Mount a volume (bind mount)
+#   --network <network_name> : Connect to a specific network
+#   --rm             : Automatically remove the container when it exits
+#   -e <key>=<value> : Set environment variables
+# Example: Run an interactive Ubuntu shell
+docker run -it ubuntu bash
+# Example: Run Nginx in detached mode, map port 8080 on host to 80 in container, name it 'my_nginx'
+docker run -d -p 8080:80 --name my_nginx nginx
+# Example: Run a container that auto-removes itself after exit
+docker run --rm busybox ping localhost
+
+# 3. Start a stopped container
+docker start <container_name> | <container_id> [more_containers...]
+# Example: Start the container named 'my_nginx'
+docker start my_nginx
+
+# 4. Stop a running container
+docker stop <container_name> | <container_id> [more_containers...]
+# Example: Stop the container named 'my_nginx'
+docker stop my_nginx
+
+# 5. Restart a container
+docker restart <container_name> | <container_id> [more_containers...]
+# Example: Restart the container named 'my_nginx'
+docker restart my_nginx
+
+# 6. Execute a command in a running container
+docker exec [OPTIONS] <container_name> | <container_id> <command>
+# Common OPTIONS:
+#   -it              : Run in interactive mode with pseudo-TTY
+# Example: Get an interactive bash shell inside the 'my_nginx' container
+docker exec -it my_nginx bash
+# Example: Check the logs within the container
+docker exec my_nginx tail -n 20 /var/log/nginx/error.log
+
+# 7. Show detailed information about a container
+docker inspect <container_name> | <container_id>
+# Example: Inspect the 'my_nginx' container
+docker inspect my_nginx
+
+# 8. Remove one or more containers
+docker rm <container_name> | <container_id> [more_containers...]
+# Example: Remove the stopped container with ID 'a1b2c3d4e5f6'
+docker rm a1b2c3d4e5f6
+# Example: Force remove a running container (use with caution!)
+docker rm -f my_nginx
+
+# 9. Remove all stopped containers
+docker container prune
+
+# 10. Log into a running container (attaches stdin/stdout/stderr)
+docker attach <container_name> | <container_id>
+# Example: Attach to the 'my_nginx' container
+docker attach my_nginx
+# (Press Ctrl+P, then Ctrl+Q to detach without stopping the container)
+
+# 11. View logs generated by a container
+docker logs <container_name> | <container_id> [OPTIONS]
+# Common OPTIONS:
+#   -f               : Follow log output (tail -f)
+#   --tail <number>  : Show only the last 'number' lines
+#   -t               : Add timestamps to output
+# Example: Follow the logs of 'my_nginx'
+docker logs -f my_nginx
+# Example: Show the last 10 lines of logs for 'my_nginx'
+docker logs --tail 10 my_nginx
+
+# 12. Copy files/folders between the host and a container
+docker cp <source> <container_name>:/destination
+docker cp <container_name>:/source <destination>
+# Example: Copy 'local_file.txt' into 'my_nginx' container's '/tmp/' directory
+docker cp local_file.txt my_nginx:/tmp/
+# Example: Copy 'my_nginx' container's '/etc/nginx/nginx.conf' to the host's current directory
+docker cp my_nginx:/etc/nginx/nginx.conf .
+
+# 13. Commit changes in a container to create a new image
+docker commit <container_name> | <container_id> <new_image_name>[:<tag>]
+# Example: Commit changes in 'my_modified_container' to create 'my_updated_image:latest'
+docker commit my_modified_container my_updated_image:latest
+```
 # Dockerfile Creation:
 Docker image creation using existing docker file
 
@@ -500,22 +651,27 @@ docker container inspect <container_name>
     docker attaches just connect the standard I/O of the main process inside
     the container to the corresponding standard I/O error of the current
     terminal.
-- docker exec is especially for running new things in an already started
+-  docker exec is especially for running new things in an already started
 container, be it a shell or some other process.
 
 # The difference between expose and publish a docker
 - We have three options:
+
   1.Neither specifies expose nor -p
+  
   2. Only specify expose
+  
   3.Specify expose and -p
 
 # Explain
   - If we specify neither expose nor -p the service in the container will only
       be accessible from inside the container itself.
--If we expose a port, the service in the container is not accessible from
+    
+-  If we expose a port, the service in the container is not accessible from
         outside docker, but from inside other docker containers, so this is good
             for inter-container communication.
-- If we expose and -p a port, the service in the container is accessible from
+   
+-  If we expose and -p a port, the service in the container is accessible from
         anywhere, even outside docker.
 
 
